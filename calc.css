@@ -1,0 +1,22 @@
+#main {
+  width: 13%;
+  height: 19%;
+  border: 1px solid red;
+  float: left;
+}
+
+#bId {
+  border: 1px solid blue;
+  float: left;
+  margin: 5px;
+  padding: 5px;
+  height: 80%;
+  width: 86%;
+}
+
+#buttonId {
+  margin: 1px;
+  float:left;
+  padding: 1px;
+  border: 1px solid white;
+}
