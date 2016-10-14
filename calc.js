@@ -1,148 +1,150 @@
-var clearResult, numberZero, numberOne, numberTwo, numberThree, numberFour, numberFive, numberSix, numberSeven, numberEight, numberNine,
-addOp, subOp, mulOp;
+var result, numberZero, numberOne, numberTwo, numberThree, numberFour, numberFive, numberSix, numberSeven, numberEight, numberNine, addOp, subOp, mulOp;
 
-var functionResult = function() {
-  clearResult = document.getElementById("result");
+function getResultBox() {
+	result = document.getElementById("result"); 
+	return result;
+}
+
+function setResultBoxValue(number) {
+	result.value = number;
+}
+
+function getResultBoxValue() {
+	return getResultBox().value;
+}
+
+function isResultBoxEmpty() {
+	if(getResultBoxValue() === undefined) {
+		return true;
+	}
+	return false;
 }
 
 function functionC() {
-	if(clearResult !== undefined) {
-		clearResult.value = "";
+	if(getResultBoxValue() !== undefined) {
+		setResultBoxValue("");
 	}
 }
 
 function function0() {
 	numberZero = document.getElementById("zero").value;
-	if(clearResult !== undefined) {
-  	   clearResult.value += numberZero;
+	if(isResultBoxEmpty()) {
+		getResultBox().value = numberZero;
 	} else {
-	   functionResult();
-	   clearResult.value = numberZero;
+		getResultBox().value += numberZero;
 	}
 }
 
 function function1() {
 	numberOne = document.getElementById("one").value;
-	if(clearResult !== undefined) {
-		clearResult.value += numberOne;
+	if(isResultBoxEmpty()) {
+		getResultBox().value = numberOne;
 	} else {
-		functionResult();
-		clearResult.value = numberOne;
+		getResultBox().value += numberOne;
 	}
 }
 
 function function2() {
 	numberTwo = document.getElementById("two").value;
-	if(clearResult !== undefined) {
-		clearResult.value += numberTwo;
+	if(isResultBoxEmpty()) {
+		getResultBox().value = numberTwo;
 	} else {
-		functionResult();
-		clearResult.value = numberTwo;
+		getResultBox().value += numberTwo;
 	}
 }
 
 function function3() {
 	numberThree = document.getElementById("three").value;
-	if(clearResult !== undefined) {
-		clearResult.value += numberThree;
+	if(isResultBoxEmpty()) {
+		getResultBox().value = numberThree;
 	} else {
-		functionResult();
-		clearResult.value = numberThree;
+		getResultBox().value += numberThree;
 	}
 }
 
 function function4() {
 	numberFour = document.getElementById("four").value;
-	if(clearResult !== undefined) {
-		clearResult.value += numberFour;
+	if(isResultBoxEmpty()) {
+		getResultBox().value = numberFour;
 	} else {
-		functionResult();
-		clearResult.value = numberFour;
+		getResultBox().value += numberFour;
 	}
 }
 
 function function5() {
 	numberFive = document.getElementById("five").value;
-	if(clearResult !== undefined) {
-		clearResult.value += numberFive;
+	if(isResultBoxEmpty()) {
+		getResultBox().value = numberFive;
 	} else {
-		functionResult();
-		clearResult.value = numberFive;
+		getResultBox().value += numberFive;
 	}
 }
 
 function function6() {
 	numberSix = document.getElementById("six").value;
-	if(clearResult !== undefined) {
-		clearResult.value += numberSix;
+	if(isResultBoxEmpty()) {
+		getResultBox().value = numberSix;
 	} else {
-		functionResult();
-		clearResult.value = numberSix;
+		getResultBox().value += numberSix;
 	}
 }
 
 function function7() {
 	numberSeven = document.getElementById("seven").value;
-	if(clearResult !== undefined) {
-		clearResult.value += numberSeven;
+	if(isResultBoxEmpty()) {
+		getResultBox().value = numberSeven;
 	} else {
-		functionResult();
-		clearResult.value = numberSeven;
+		getResultBox().value += numberSeven;
 	}
 }
 
 function function8() {
 	numberEight = document.getElementById("eight").value;
-	if(clearResult !== undefined) {
-		clearResult.value += numberEight;
+	if(isResultBoxEmpty()) {
+		getResultBox().value = numberEight;
 	} else {
-		functionResult();
-		clearResult.value = numberEight;
+		getResultBox().value += numberEight;
 	}
 }
 
 function function9() {
 	numberNine = document.getElementById("nine").value;
-	if(clearResult !== undefined) {
-		clearResult.value += numberNine;
+	if(isResultBoxEmpty()) {
+		getResultBox().value = numberNine;
 	} else {
-		functionResult();
-		clearResult.value = numberNine;
+		getResultBox().value += numberNine;
 	}
 }
 
 function functionAddition() {
 	addOp = document.getElementById("add").value;
-	if(clearResult !== undefined) {
-		clearResult.value += addOp;
+	if(isResultBoxEmpty()) {
+		getResultBox().value = addOp;
 	} else {
-		functionResult();
-		clearResult.value = addOp;
+		getResultBox().value += addOp;
 	}
 }
 
 function functionMultiple() {
 	mulOp = document.getElementById("mul").value;
-	if(clearResult !== undefined) {
-		clearResult.value += mulOp;
+	if(isResultBoxEmpty()) {
+		getResultBox().value = mulOp;
 	} else {
-		functionResult();
-		clearResult.value = mulOp;
+		getResultBox().value += mulOp;
 	}
 }
 
 function functionSubstract() {
 	subOp = document.getElementById("sub").value;
-	if(clearResult !== undefined) {
-		clearResult.value += subOp;
+	if(isResultBoxEmpty()) {
+		getResultBox().value = subOp;
 	} else {
-		functionResult();
-		clearResult.value = subOp;
+		getResultBox().value += subOp;
 	}
 }
 
 function functionEqual() {
-	if(clearResult !== undefined) {
-	  clearResult.value = eval(clearResult.value);
+	if(!isResultBoxEmpty()) {
+	  setResultBoxValue(eval(getResultBox().value));
 	}
 }
