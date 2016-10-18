@@ -1,150 +1,109 @@
-var result, numberZero, numberOne, numberTwo, numberThree, numberFour, numberFive, numberSix, numberSeven, numberEight, numberNine, addOp, subOp, mulOp;
+var result, numberZero, numberOne, numberTwo, numberThree, numberFour, numberFive, numberSix, numberSeven, numberEight, numberNine, addOp, subOp, mulOp, divOp;
 
-function getResultBox() {
+function getResultBoxObject() {
 	result = document.getElementById("result"); 
 	return result;
 }
 
-function setResultBoxValue(number) {
-	result.value = number;
-}
-
-function getResultBoxValue() {
-	return getResultBox().value;
+function getValue() {
+	return getResultBoxObject().value;
 }
 
 function isResultBoxEmpty() {
-	if(getResultBoxValue() === undefined) {
+	if(getValue() === undefined || getValue() === "") {
 		return true;
 	}
 	return false;
 }
 
+function setValue(valueToSet, makeEmpty){
+	if(isResultBoxEmpty() || makeEmpty) {
+		getResultBoxObject().value = valueToSet;
+	} else {
+		getResultBoxObject().value += valueToSet;
+	}
+}
+
 function functionC() {
-	if(getResultBoxValue() !== undefined) {
-		setResultBoxValue("");
+	if(getValue() !== undefined) {
+		setValue("", true);
 	}
 }
 
 function function0() {
 	numberZero = document.getElementById("zero").value;
-	if(isResultBoxEmpty()) {
-		getResultBox().value = numberZero;
-	} else {
-		getResultBox().value += numberZero;
-	}
+	setValue(numberZero, false);
 }
 
 function function1() {
 	numberOne = document.getElementById("one").value;
-	if(isResultBoxEmpty()) {
-		getResultBox().value = numberOne;
-	} else {
-		getResultBox().value += numberOne;
-	}
+	setValue(numberOne, false);
 }
 
 function function2() {
 	numberTwo = document.getElementById("two").value;
-	if(isResultBoxEmpty()) {
-		getResultBox().value = numberTwo;
-	} else {
-		getResultBox().value += numberTwo;
-	}
+	setValue(numberTwo, false);
 }
 
 function function3() {
 	numberThree = document.getElementById("three").value;
-	if(isResultBoxEmpty()) {
-		getResultBox().value = numberThree;
-	} else {
-		getResultBox().value += numberThree;
-	}
+	setValue(numberThree, false);
 }
 
 function function4() {
 	numberFour = document.getElementById("four").value;
-	if(isResultBoxEmpty()) {
-		getResultBox().value = numberFour;
-	} else {
-		getResultBox().value += numberFour;
-	}
+	setValue(numberFour, false);
 }
 
 function function5() {
 	numberFive = document.getElementById("five").value;
-	if(isResultBoxEmpty()) {
-		getResultBox().value = numberFive;
-	} else {
-		getResultBox().value += numberFive;
-	}
+	setValue(numberFive, false);
 }
 
 function function6() {
 	numberSix = document.getElementById("six").value;
-	if(isResultBoxEmpty()) {
-		getResultBox().value = numberSix;
-	} else {
-		getResultBox().value += numberSix;
-	}
+	setValue(numberSix, false);
 }
 
 function function7() {
 	numberSeven = document.getElementById("seven").value;
-	if(isResultBoxEmpty()) {
-		getResultBox().value = numberSeven;
-	} else {
-		getResultBox().value += numberSeven;
-	}
+	setValue(numberSeven, false);
 }
 
 function function8() {
 	numberEight = document.getElementById("eight").value;
-	if(isResultBoxEmpty()) {
-		getResultBox().value = numberEight;
-	} else {
-		getResultBox().value += numberEight;
-	}
+	setValue(numberEight, false);
 }
 
 function function9() {
 	numberNine = document.getElementById("nine").value;
-	if(isResultBoxEmpty()) {
-		getResultBox().value = numberNine;
-	} else {
-		getResultBox().value += numberNine;
-	}
+	setValue(numberNine, false);
 }
 
 function functionAddition() {
 	addOp = document.getElementById("add").value;
-	if(isResultBoxEmpty()) {
-		getResultBox().value = addOp;
-	} else {
-		getResultBox().value += addOp;
-	}
+	setValue(addOp, false);
 }
 
 function functionMultiple() {
 	mulOp = document.getElementById("mul").value;
-	if(isResultBoxEmpty()) {
-		getResultBox().value = mulOp;
-	} else {
-		getResultBox().value += mulOp;
-	}
+	setValue(mulOp, false);
 }
 
 function functionSubstract() {
 	subOp = document.getElementById("sub").value;
-	if(isResultBoxEmpty()) {
-		getResultBox().value = subOp;
-	} else {
-		getResultBox().value += subOp;
-	}
+	setValue(subOp, false);
+}
+
+function functionDivision() {
+	divOp = document.getElementById("division").value;
+	setValue(divOp, false);
 }
 
 function functionEqual() {
 	if(!isResultBoxEmpty()) {
-	  setResultBoxValue(eval(getResultBox().value));
+	  setValue(eval(getResultBoxObject().value), true);
 	}
 }
+
+/* http://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.qb.server.doc/doc/t0011930.html */

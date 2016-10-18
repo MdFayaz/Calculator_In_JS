@@ -7,8 +7,8 @@
 
 <div id="main">
    <div id="bId">
-	   <input type="text" id="result" style="width:79%;margin:1px;float:left;" onclick="functionResult()"/>
-	   <button style="width:18%;margin:1px;float:left;" onclick="functionC()"> C </button>
+	   <input type="text" id="result" style="width:79%;margin:1px;float:left;text-align:right" onclick="functionResult()"/>
+	   <button style="width:16%;margin:2px;float:center;" onclick="functionC()"> C </button>
 
 	<div id="buttonId">
 	   <input type="button" id="seven" value="7" onclick="function7()"/>
@@ -24,15 +24,16 @@
 	   <input type="button" id="three" value="3" onclick="function3()"/> <br>
 	</div>
 
-	<div style="width:17%;border:1px solid white;float:left;margin:1px;">
-	   <input type="button" id="equal" value="=" onclick="functionEqual()" style="height:34%;margin:1px;"/>
-	   <input type="button" id="zero" value="0" onclick="function0()" style="height:34%;margin:1px;"/>
+	<div style="border:1px solid white;width:20%;float:left;bottom:0px;">
+	   <input type="button" id="add" value="+" style="margin:1px;float:right;" onclick="functionAddition()"/>
+	   <input type="button" id="division" value=" /" style="margin:1px;float:right;" onclick="functionDivision()"/>
+	   <input type="button" id="zero" value="0" onclick="function0()" style="margin:1px;float:right;"/>
 	</div>
 
-	<div>
-	   <input type="button" id="mul" value="*" style="width:18%;margin:1px;" onclick="functionMultiple()"/>
-	   <input type="button" id="sub" value="-" style="width:18%;margin:1px;" onclick="functionSubstract()"/>
-	   <input type="button" id="add" value="+" style="width:18%;margin:1px;" onclick="functionAddition()"/>
+	<div  style="border:1px solid white;width:17%;float:left;bottom:0px;">
+	   <input type="button" id="mul" value="*" style="width:90%;margin:1px;" onclick="functionMultiple()"/>
+	   <input type="button" id="sub" value="-" style="width:90%;margin:1px;" onclick="functionSubstract()"/>
+	   <input type="button" id="equal" value="=" style="width:90%;margin:1px;" onclick="functionEqual()"/>
 	</div>
    </div>
 </div>
